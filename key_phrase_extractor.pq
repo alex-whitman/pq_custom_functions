@@ -4,6 +4,9 @@
 // Inputs are based on one query containing text to analyze (data table) and an additional query (replacements) of keywords and phrases to replace
 // Replacements query should contain two columns. The first column is a distinct list of text to replace. The second column is the corresponding replacement value.
 // Only non-null values should be included in replacements query. Blanks or nulls should be represented with text whitespace.
+// As the function loops through the replacements query values are not safe so order the replacements accordingly.
+// eg 1. High-Five to Hand-Smack 2. mac to windows --> erroneous correction to Hand-Swindowsk. Instead 1. mac to windows 2. High-Five to Hand-Smack --> still Hand-Smack
+
 // Output is a new query with columns indicating the original text, cleaned text, and extracted phrases
 
 ( TextToChange as list, WordsToReplace as list, WordsToReplaceWith as list ) =>
