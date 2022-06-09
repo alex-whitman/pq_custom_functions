@@ -1,3 +1,5 @@
+// Function can bulk replace or omit words and phrases. Additionally it can leverage any number of available Cognitive Services Text Analytics options.
+
 = ( #"Text to Analyze" as list, 
   #"Words/Phrases to Replace" as nullable list, 
   #"Words/Phrases to Replace With" as nullable list, 
