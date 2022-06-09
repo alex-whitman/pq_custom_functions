@@ -13,9 +13,7 @@ let
     ReplaceWith = if #"Words/Phrases to Replace With" = null then null else List.Buffer(#"Words/Phrases to Replace With"),
     TextTable = Table.TransformColumnTypes(Table.FromList(TextList),{{"Column1", type text}}),
 
-    DetectLanguage = if #"Detect Language (true/false)" = false then null else AIFunctions.Contents(){[Key = "CognitiveServices.DetectLanguagetext"]}[Data],
-    ExtractKeyPhrases = if #"Extract Key Phrases (true/false)" = false then null else AIFunctions.Contents(){[Key = "CognitiveServices.ExtractKeyPhrasestexttext"]}[Data],
-   
+  
     ReplacementFunction = if ReplaceWords = null then null else (InputText)=> 
      let
        DoReplacement = List.Generate(
